@@ -49,7 +49,7 @@ public class StatFsSourceProtoImpl implements StatFsSource {
     StatFsProto p = new StatFsProto();
     p.mountPoint = mountPoint;
     p.availableBlocksLong = s.getAvailableBlocks();
-    p.blockSizeLong = s.getBlockSize();
+    p.blockSize = s.getBlockSize();
     p.freeBlocksLong = s.getFreeBlocks();
     p.blockCountLong = s.getBlockCount();
     p.availableBytes = s.getAvailableBytes();

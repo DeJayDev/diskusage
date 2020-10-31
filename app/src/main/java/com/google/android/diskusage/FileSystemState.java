@@ -1018,7 +1018,7 @@ public class FileSystemState {
     if (deletingEntry.parent == masterRoot) {
       throw new RuntimeException("sdcard deletion is not available in UI");
     }
-    int displayBlockSize = masterRoot.getDisplayBlockSize();
+    long displayBlockSize = masterRoot.getDisplayBlockSize();
     moveAwayCursor(deletingEntry);
     deletingEntry.remove(displayBlockSize);
     long deletingEntryBlocks = deletingEntry.getSizeInBlocks();
@@ -1124,7 +1124,7 @@ public class FileSystemState {
     if (dSize >= 0) return;
 
     FileSystemEntry parent = entry.parent;
-    int displayBlockSize = masterRoot.getDisplayBlockSize();
+    long displayBlockSize = masterRoot.getDisplayBlockSize();
 
     while (parent != null) {
       parent.setSizeInBlocks(parent.getSizeInBlocks() + dSize, displayBlockSize);

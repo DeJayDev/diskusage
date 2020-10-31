@@ -130,7 +130,7 @@ public class BackgroundDelete extends Thread {
   public void restore() {
     Log.d("DiskUsage", "restore started for " + path);
     MountPoint mountPoint = MountPoint.getForKey(diskUsage, diskUsage.getKey());
-    int displayBlockSize = diskUsage.fileSystemState.masterRoot.getDisplayBlockSize();
+    long displayBlockSize = diskUsage.fileSystemState.masterRoot.getDisplayBlockSize();
     try {
       FileSystemEntry newEntry = new Scanner(
               // FIXME: hacked allocatedBlocks and heap size

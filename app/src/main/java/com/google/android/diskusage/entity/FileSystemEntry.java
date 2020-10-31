@@ -1101,7 +1101,7 @@ public class FileSystemEntry {
     // throw new RuntimeException("child is not found: " + this);
   }
 
-  public final void insert(FileSystemEntry newEntry, int blockSize) {
+  public final void insert(FileSystemEntry newEntry, long blockSize) {
     FileSystemEntry[] children0 = new FileSystemEntry[children.length + 1];
     System.arraycopy(children, 0, children0, 0, children.length);
     children0[children.length] = newEntry;
